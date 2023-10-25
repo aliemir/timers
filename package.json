@@ -4,9 +4,11 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon --watch 'src/**/*.{ts,html}' -e ts,html --exec 'tsc && npm run css:build && node dist/index.js'",
-    "build": "tsc -p .",
+    "dev": "nodemon --watch 'src/**/*.{ts,html}' -e ts,html --exec 'tsc && npm run css:build && npm run copy-public && npm run copy-html && node dist/index.js'",
+    "build": "tsc -p . && npm run css:build && npm run copy-public && npm run copy-html",
     "start": "node dist/index.js",
+    "copy-public": "cp -r ./src/public ./dist/public",
+    "copy-html": "cp ./src/*.html ./dist",
     "css:dev": "tailwindcss -i ./src/style.css -o ./public/style.css --watch",
     "css:build": "tailwindcss build ./src/style.css -o ./public/style.css"
   },

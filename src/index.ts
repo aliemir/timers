@@ -4,11 +4,13 @@ import path from "path";
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res, next) => {
-  const file = path.join(__dirname, "../src/index.html");
-  const content = fs.readFileSync(file, "utf-8");
+  const content = fs.readFileSync(
+    path.join(__dirname, "./index.html"),
+    "utf-8"
+  );
 
   res.setHeader("Content-Type", "text/html");
   res.send(content);
@@ -52,8 +54,10 @@ app.get("/:timestamp", (req, res, next) => {
     return next();
   }
 
-  const file = path.join(__dirname, "../src/timer.html");
-  const content = fs.readFileSync(file, "utf-8");
+  const content = fs.readFileSync(
+    path.join(__dirname, "./timer.html"),
+    "utf-8"
+  );
 
   res.setHeader("Content-Type", "text/html");
   res.send(content);
@@ -77,13 +81,8 @@ app.get("/preset/:minute-minutes", (req, res, next) => {
   res.redirect(`/${timestamp}`);
 });
 
-// serve 404.html on 404
 app.use((req, res) => {
-  const file = path.join(__dirname, "../src/404.html");
-  const content = fs.readFileSync(file, "utf-8");
-
-  res.setHeader("Content-Type", "text/html");
-  res.status(404).send(content);
+  res.redirect("/");
 });
 
 app.listen(3000, () => {
