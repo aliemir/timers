@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shared Timers</title>
+    <!-- OG_SECTION-START -->
+
+    <!-- OG_SECTION-END -->
+  </head>
+
+  <body class="bg-slate-900 font-mono text-slate-50">
+    <main
+      class="py-4 px-5 max-w-screen-md w-full flex flex-col justify-center items-center mx-auto gap-8"
+    >
+      <h1 class="lowercase text-left w-full text-xl pl-3">
+        <a href="/">Shareable Timers</a>
+      </h1>
+      <div id="timer" class="flex flex-col gap-8 w-full py-12">
+        <div class="flex gap-4 items-center justify-between w-full">
+          <div id="day-container" class="flex flex-col">
+            <div
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              id="day"
+            >
+              00
+            </div>
+            <span class="text-right pr-3 text-slate-400">days</span>
+          </div>
+          <div id="hour-container" class="flex flex-col">
+            <div
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              id="hour"
+            >
+              00
+            </div>
+            <span class="text-right pr-3 text-slate-400">hours</span>
+          </div>
+          <div id="minute-container" class="flex flex-col">
+            <div
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              id="minute"
+            >
+              00
+            </div>
+            <span class="text-right pr-3 text-slate-400">minutes</span>
+          </div>
+          <div id="second-container" class="flex flex-col">
+            <div
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              id="second"
+            >
+              00
+            </div>
+            <span class="text-right pr-3 text-slate-400">second</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full items-end justify-end">
+        <a
+          href="/"
+          class="px-3 py-2 bg-slate-700 cursor-pointer hover:bg-slate-600"
+          >create a new timer</a
+        >
+      </div>
+    </main>
+    <script src="/script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shared Timers</title>
+    <!-- OG_SECTION-START -->
+
+    <!-- OG_SECTION-END -->
+  </head>
+
+  <body class="bg-slate-900 font-mono text-slate-50">
+    <main
+      class="py-4 px-5 max-w-screen-md w-full flex flex-col justify-center items-center mx-auto gap-8"
+    >
+      <h1 class="lowercase text-left w-full text-xl pl-3">
+        <a href="/">Shareable Timers</a>
+      </h1>
+      <form
+        id="timer"
+        method="POST"
+        action="/create"
+        class="flex flex-col gap-8 w-full py-12"
+      >
+        <div class="flex gap-4 items-center justify-between w-full">
+          <div id="day-container" class="flex flex-col">
+            <input
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              type="number"
+              id="day"
+              name="day"
+              min="0"
+              pattern="[0-9]*"
+              placeholder="00"
+            />
+            <span class="text-right pr-3 text-slate-400">days</span>
+          </div>
+          <div id="hour-container" class="flex flex-col">
+            <input
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              type="number"
+              id="hour"
+              name="hour"
+              min="0"
+              pattern="[0-24]*"
+              placeholder="00"
+            />
+            <span class="text-right pr-3 text-slate-400">hours</span>
+          </div>
+          <div id="minute-container" class="flex flex-col">
+            <input
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              type="number"
+              id="minute"
+              name="minute"
+              min="0"
+              pattern="[0-60]*"
+              placeholder="00"
+            />
+            <span class="text-right pr-3 text-slate-400">minutes</span>
+          </div>
+          <div id="second-container" class="flex flex-col">
+            <input
+              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              type="number"
+              id="second"
+              name="second"
+              min="0"
+              pattern="[0-60]*"
+              placeholder="00"
+            />
+            <span class="text-right pr-3 text-slate-400">second</span>
+          </div>
+        </div>
+        <div class="flex items-end justify-end">
+          <input
+            type="submit"
+            value="start timer"
+            class="px-3 py-2 bg-slate-700 cursor-pointer hover:bg-slate-600"
+          />
+        </div>
+      </form>
+
+      <div id="presets" class="flex flex-col gap-4 w-full">
+        <h2 class="text-lg">presets</h2>
+        <div class="text-xs flex gap-4">
+          <a
+            href="/preset/1-minutes"
+            class="hover:bg-slate-600 py-2 px-3 bg-slate-700"
+            >1 minute</a
+          >
+          <a
+            href="/preset/5-minutes"
+            class="hover:bg-slate-600 py-2 px-3 bg-slate-700"
+            >5 minutes</a
+          >
+          <a
+            href="/preset/10-minutes"
+            class="hover:bg-slate-600 py-2 px-3 bg-slate-700"
+            >10 minutes</a
+          >
+          <a
+            href="/preset/15-minutes"
+            class="hover:bg-slate-600 py-2 px-3 bg-slate-700"
+            >15 minutes</a
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
