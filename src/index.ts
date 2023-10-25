@@ -1,4 +1,4 @@
-import express, { urlencoded } from "express";
+import express, { RequestHandler, urlencoded } from "express";
 import fs from "fs";
 import path from "path";
 
@@ -13,6 +13,7 @@ app.get("/", (req, res, next) => {
   );
 
   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "public, max-age=31536000");
   res.send(content);
 });
 
@@ -60,6 +61,7 @@ app.get("/:timestamp", (req, res, next) => {
   );
 
   res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "public, max-age=31536000");
   res.send(content);
 });
 
