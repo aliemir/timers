@@ -36,10 +36,10 @@
         action="/create"
         class="flex flex-col gap-8 w-full py-12"
       >
-        <div class="flex gap-4 items-center justify-between w-full">
+        <div class="flex items-center justify-between w-full">
           <div id="day-container" class="flex flex-col">
             <input
-              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              class="p-0 text-[12vw] lg:text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
               type="number"
               id="day"
               name="day"
@@ -47,11 +47,14 @@
               pattern="[0-9]*"
               placeholder="00"
             />
-            <span class="text-right pr-3 text-slate-400">days</span>
+            <span
+              class="text-right pr-1 sm:pr-3 text-slate-400 text-xs sm:text-base"
+              >days</span
+            >
           </div>
           <div id="hour-container" class="flex flex-col">
             <input
-              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              class="p-0 text-[12vw] lg:text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
               type="number"
               id="hour"
               name="hour"
@@ -59,11 +62,14 @@
               pattern="[0-24]*"
               placeholder="00"
             />
-            <span class="text-right pr-3 text-slate-400">hours</span>
+            <span
+              class="text-right pr-1 sm:pr-3 text-slate-400 text-xs sm:text-base"
+              >hours</span
+            >
           </div>
           <div id="minute-container" class="flex flex-col">
             <input
-              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              class="p-0 text-[12vw] lg:text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
               type="number"
               id="minute"
               name="minute"
@@ -71,11 +77,14 @@
               pattern="[0-60]*"
               placeholder="00"
             />
-            <span class="text-right pr-3 text-slate-400">minutes</span>
+            <span
+              class="text-right pr-1 sm:pr-3 text-slate-400 text-xs sm:text-base"
+              >minutes</span
+            >
           </div>
           <div id="second-container" class="flex flex-col">
             <input
-              class="p-0 text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
+              class="p-0 text-[12vw] lg:text-8xl bg-transparent border-none text-slate-50 w-[2ch] text-right appearance-none focus:outline-none"
               type="number"
               id="second"
               name="second"
@@ -83,7 +92,10 @@
               pattern="[0-60]*"
               placeholder="00"
             />
-            <span class="text-right pr-3 text-slate-400">second</span>
+            <span
+              class="text-right pr-1 sm:pr-3 text-slate-400 text-xs sm:text-base"
+              >second</span
+            >
           </div>
         </div>
         <div class="flex items-end justify-end">
@@ -97,7 +109,7 @@
 
       <div id="presets" class="flex flex-col gap-4 w-full">
         <h2 class="text-lg">presets</h2>
-        <div class="text-xs flex gap-4">
+        <div class="text-xs grid grid-cols-2 md:grid-cols-4 gap-4">
           <a
             href="/preset/1-minutes"
             class="hover:bg-slate-600 py-2 px-3 bg-slate-700"
